@@ -33,7 +33,7 @@ int main() {
 
 
 
-    // IN CASE OF ARRAY  arr = &arr = &arr[0]   because arr is mapped in symbol table i case of int * p =  arr p is allocated other arr is at other
+    // IN CASE OF ARRAY  arr = &arr = &arr[0]   because arr is mapped in symbol table in case of int * p =  arr p is allocated other arr is at other
     // REMEMBER ARR[I] IS SOLVED AS *(ARR + I) ALSO ARR[I] === I[ARR]
     // *******  int arr[] = {1,2,3,4};
     // cout << 4[arr];
@@ -51,7 +51,7 @@ int main() {
     // char ch = 'p';
     // char * ptr = &ch;
     // cout << ptr << " ";
-    // ALONG WITH THE CHAR GARBAGE VALUE BE PRINTED  AND IF ARRAY IS PASSED ONLY POINTER OF FIRES ADDRESS IS PASSED AND
+    // ALONG WITH THE CHAR GARBAGE VALUE BE PRINTED  AND IF ARRAY IS PASSED ONLY POINTER OF FIRST ADDRESS IS PASSED AND
     //  ALSO NEW POINTER IS CREATED SO ARR != &ARR IN CASE OF POINTER PASSED AS FUNCTION
 
 
@@ -73,21 +73,36 @@ int main() {
     // void * ptr = &x;
     // cout << *static_cast<int*>(ptr);
 
-
-
-
     // FUNCTION POINTERS
-
     // int (*FunctionPointers[])(int,int) = {add,sub};
     // cout << FunctionPointers[1](1,6);
     
 
 
-    int a = 1,b=8;
-    int*  ptr = &a;
-    int*  ptr1 = ptr;
+    // int a = 1,b=8;
+    // int*  ptr = &a;
+    // int*  ptr1 = ptr;
 
-    *ptr = 6;
-    cout << &ptr << " " << &ptr1  << "   " << *ptr << " " <<*ptr1;;
+    // *ptr = 6;
+    // cout << &ptr << " " << &ptr1  << "   " << *ptr << " " <<*ptr1;;
+
+
+    // char arr[] = "ABCDEFG";
+    // char * ptr = arr;
+    // arr[0] = 'D';
+    // cout << ptr << " " << arr << endl;
+
+    
+
+    // int arr1[] = {1,2,3,4};
+    // int * ptr1 = arr1;
+    // arr[0] = 3;
+    // cout << ptr1 << " " << arr1;
+
+
+    const int* a = new int(2);   =>  CONST DATA NON-CONST POINTER
+    int b = 10,a = &b;
+
+
 
 }
