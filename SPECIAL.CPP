@@ -9,6 +9,10 @@ means address is returned and stores in pointer
 
 // POINTERS
 
+    int * ptr = &a;
+    int * ptr = new int; BOTH ARE DIFFERENT AS IN FIRST CASE POINTER IS STORED IN STACK IN SECOND CASE ALSO IN STACK BUT POINTING
+    TO MEMORY IN HEAP
+
     int * ptr = NULL;
     cout << *ptr << " garbage value if do not write any value if 0 or null it will print nothing";
 
@@ -59,10 +63,61 @@ means address is returned and stores in pointer
 
 
 
+    // INITIALISATION LIST
+
+    abc(int a,int b) : this->var1(val1),this->var2(val2){};
+
+    BENEFIT OF USING IL IS THAT IF WE HAVE INITALIZED CONST VAR THEN WE CANNOT ASSIGN VALUE INSIDE OLD CONSTRUCTOR WAY BUT CAN DO IN NEW
+
+
+abc{
+    public:
+    const int z;
+    abc(int _z = 0){
+        z = _z;  // ERROR 
+    }
+
+
+
+        // MACROS
+
+        #define PI = 3.14;
+        IT MEANS BEFORE CODE IS COMPILED THERE IS A STEP CALLED PRE PROCESSING WHERE COMPILER WILL REPLACE THE VAR WITH volatile
+
+        area(){
+            PI;
+        }
+}
 
 
 
 
+    // ABSTRACTION >  VIRTUAL VS PURE VIRTUAL FUNCTION
+
+
+Feature	                                   Virtual Function	                                        Pure Virtual Function
+
+
+Definition	                            A function in a base class with a                           A function in a base class with no implementation,
+                                        default implementation that can be                          forcing derived classes to override it.
+                                        overridden in derived classes
+    
+Syntax	                                virtual void functionName() { ... }	                        virtual void functionName() = 0;
+
+Implementation in Base Class	        Yes 	                                                    No
+
+Overriding in Derived Class	            Optional	                                                Mandatory
+
+Class Instantiation	                    The class can be instantiated.	                            The class is abstract and cannot be instantiated.
+
+Purpose	                                To provide a common interface                               To enforce that derived classes must implement the function.
+                                        with optional overriding
+
+
+
+Yes, a class containing at least one pure virtual function is called an abstract class in C++.
+Abstract classes cannot be instantiated directly;
+they serve as base classes for other classes that implement the pure virtual functions.
 
 
 
