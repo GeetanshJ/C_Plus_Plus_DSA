@@ -20,10 +20,10 @@ class A{
 
     // SHALLOW
 
-    // A(A& obj ){
-    //     a = obj.a;
-    //     b = obj.b;
-    // }
+    A(A& obj ){
+        a = obj.a;
+        b = obj.b;
+    }
 
     // DEEP
 
@@ -39,8 +39,8 @@ int main() {
 
     *obj.b = 4;
 
-    // cout << obj.a << " " << obj.b << " " << *obj.b << endl;
-    // cout << obj1.a << " " << obj1.b << " " << *obj1.b;
+    cout << obj.a << " " << obj.b << " " << *obj.b << endl;
+    cout << obj1.a << " " << obj1.b << " " << *obj1.b;
 
     vector<int> arr = {1,5,3,2,1};
 

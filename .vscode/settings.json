@@ -59,6 +59,11 @@
   "C_Cpp.errorSquiggles": "disabled",
   "files.associations": {
     "random": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "vector": "cpp",
+    "array": "cpp",
+    "initializer_list": "cpp",
+    "utility": "cpp",
+    "sstream": "cpp"
   }
 }
