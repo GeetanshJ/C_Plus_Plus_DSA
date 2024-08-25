@@ -259,7 +259,7 @@ void reverseLL(Node*& head, Node*& tail) {
 
 int main()
 {
-    Node *head = nullptr;
+    Node *head = nullptr; 
     Node *tail = nullptr;
 
     insertAtHead(head, tail, 80);
