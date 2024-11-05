@@ -42,7 +42,7 @@ void levelOrder(Node*& root){
     queue<Node*> q;
 
     q.push(root);
-    // q.push(NULL);
+    q.push(NULL);
 
     while(!q.empty()){
         Node* temp = q.front();
@@ -68,41 +68,10 @@ void levelOrder(Node*& root){
     }
 }
 
-void topView(Node*  root){
-    if(root == NULL) return ;
-
-    unordered_map<int,int> map;
-    queue<pair<Node*,int>> q;
-    q.push({root,0});
-
-    while(!q.empty()){
-        Node* front_node = q.front().first;
-        int hd = q.front().second;
-
-        q.pop();
-
-        if(map.find(hd) == map.end()){
-            map[hd] = front_node->data;
-        }
-
-        if(front_node -> left){
-            q.push({front_node->left, hd - 1});
-        }
-
-        if(front_node -> right){
-            q.push({front_node->right, hd + 1});
-        }
-    }
-
-    for(auto i : map){
-        cout << i.second << " ";
-    }
-}
 
 
 int main() {
     Node* root = new Node(10);
     root = createTree();
-    topView(root);
 
 }

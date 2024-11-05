@@ -38,37 +38,7 @@ Node* createTree(){
     return root;
 }
 
-void levelOrder(Node*& root){
-    queue<Node*> q;
-
-    q.push(root);
-    // q.push(NULL);
-
-    while(!q.empty()){
-        Node* temp = q.front();
-        q.pop();
-
-        if(temp == NULL){
-            cout << endl;
-            if(!q.empty()){
-                q.push(NULL);
-            }
-        }
-
-        else{
-            cout << temp->data << " ";
-            if(temp->left){
-                q.push(temp->left);
-            }
-
-            if(temp->right){
-                q.push(temp->right);
-            }
-        }
-    }
-}
-
-void topView(Node*  root){
+void bottomView(Node*  root){
     if(root == NULL) return ;
 
     unordered_map<int,int> map;
@@ -81,9 +51,8 @@ void topView(Node*  root){
 
         q.pop();
 
-        if(map.find(hd) == map.end()){
-            map[hd] = front_node->data;
-        }
+        map[hd] = front_node->data;
+        
 
         if(front_node -> left){
             q.push({front_node->left, hd - 1});
@@ -103,6 +72,6 @@ void topView(Node*  root){
 int main() {
     Node* root = new Node(10);
     root = createTree();
-    topView(root);
+    bottomView(root);
 
 }
